@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hussein Design | Graphic Designer</title>
+<meta name="description" content="Hussein Design - تصميم إعلانات المنتجات والهويات البصرية والسوشيال ميديا.">
+<style>
+:root {
+  --purple: #7657ff;
+  --pink: #ff668c;
+  --yellow: #ffd166;
+  --bg: #f8f7f4;
+  --dark: #191821;
+  --muted: #777582;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.8;
+}
+a { text-decoration: none; color: inherit; }
+button { font: inherit; cursor: pointer; }
+.container { width: min(1100px, 90%); margin: auto; }
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #e9e6e2;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.logo { font-size: 23px; font-weight: 900; }
+.logo span { color: var(--purple); }
+.navlinks { display: flex; gap: 22px; font-size: 14px; }
+.navlinks a:hover { color: var(--purple); }
+.lang {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 7px 13px;
+}
+.hero {
+  padding: 85px 0 70px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 45px;
+  align-items: center;
+}
+.tag {
+  display: inline-block;
+  background: #eee9ff;
+  color: var(--purple);
+  border-radius: 30px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.3;
+  margin: 20px 0;
+  letter-spacing: -1.5px;
+}
+h1 span { color: var(--purple); }
+.hero p { color: var(--muted); max-width: 490px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: 0;
+}
+.primary { background: var(--purple); color: white; }
+.primary:hover { background: #5d40e7; }
+.secondary { background: white; border: 1px solid #e5e2e8; }
+.art {
+  min-height: 350px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.shape {
+  width: 250px;
+  height: 280px;
+  border-radius: 48% 52% 40% 60%;
+  background: linear-gradient(145deg, var(--purple), var(--pink));
+  transform: rotate(-8deg);
+}
+.sticker {
+  position: absolute;
+  padding: 15px 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 12px 35px #28203b16;
+  font-weight: bold;
+}
+.sticker.one { top: 45px; right: 0; background: var(--yellow); }
+.sticker.two { bottom: 40px; left: 0; }
+.sticker.three { bottom: 5px; right: 20px; color: var(--purple); }
+section { padding: 65px 0; }
+.section-head { margin-bottom: 30px; }
+.section-head h2 { font-size: 34px; margin: 0 0 5px; }
+.section-head p { color: var(--muted); margin: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.card {
+  background: white;
+  border: 1px solid #eeebef;
+  border-radius: 19px;
+  overflow: hidden;
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-5px); }
+.preview {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+  font-weight: 900;
+  font-size: 25px;
+}
+.p1 { background: #eee8ff; color: #6745ed; }
+.p2 { background: #ffe4e8; color: #bd315c; }
+.p3 { background: #fff0c8; color: #745000; }
+.p4 { background: #d9f5e8; color: #166a4d; }
+.p5 { background: #242333; color: white; }
+.p6 { background: #dcecff; color: #214d9a; }
+.card-info { padding: 17px; }
+.card-info h3 { margin: 0 0 4px; font-size: 18px; }
+.card-info p { margin: 0; color: var(--muted); font-size: 13px; }
+.about {
+  background: #efecff;
+  border-radius: 25px;
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+.about h2 { font-size: 32px; margin-top: 0; }
+.about p { color: #5e5b6c; }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.service {
+  background: white;
+  padding: 23px;
+  border-radius: 17px;
+  border: 1px solid #eeebef;
+}
+.service .icon { font-size: 30px; }
+.service h3 { margin: 10px 0 5px; }
+.service p { color: var(--muted); font-size: 14px; margin: 0; }
+.contact {
+  background: var(--dark);
+  color: white;
+  border-radius: 25px;
+  padding: 45px 25px;
+  text-align: center;
+}
+.contact h2 { font-size: 35px; margin: 0 0 8px; }
+.contact p { color: #c5c2d0; }
+.contact .btn { margin-top: 12px; }
+footer {
+  text-align: center;
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+[dir="ltr"] .hero p { max-width: 490px; }
+@media (max-width: 760px) {
+  .navlinks { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 50px; gap: 10px; }
+  .art { min-height: 300px; }
+  .shape { width: 210px; height: 235px; }
+  .grid, .services { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .about { grid-template-columns: 1fr; padding: 25px; }
+  section { padding: 45px 0; }
+}
+@media (max-width: 430px) {
+  .grid, .services { grid-template-columns: 1fr; }
+  .section-head h2 { font-size: 28px; }
+  .logo { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Hussein<span>Design.</span></a>
+      <div class="navlinks">
+        <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+        <a href="#work" data-ar="أعمالي" data-en="Portfolio">أعمالي</a>
+        <a href="#services" data-ar="خدماتي" data-en="Services">خدماتي</a>
+        <a href="#contact" data-ar="تواصل معي" data-en="Contact">تواصل معي</a>
+      </div>
+      <button class="lang" id="langBtn" type="button">English</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="tag" data-ar="مصمم جرافيك مستقل" data-en="Graphic Designer">مصمم جرافيك مستقل</span>
+        <h1 data-ar="أحوّل أفكارك إلى تصميمات <span>تلفت الانتباه.</span>"
+             data-en="Turning ideas into <span>eye-catching designs.</span>">
+          أحوّل أفكارك إلى تصميمات <span>تلفت الانتباه.</span>
+        </h1>
+        <p data-ar="أصمم إعلانات المنتجات والعروض التجارية والهويات البصرية بأسلوب إبداعي يساعد مشروعك على الظهور."
+           data-en="I create product ads, promotional graphics, and visual identities to help your brand stand out.">
+          أصمم إعلانات المنتجات والعروض التجارية والهويات البصرية بأسلوب إبداعي يساعد مشروعك على الظهور.
+        </p>
+        <div class="actions">
+          <a href="#work" class="btn primary" data-ar="شاهد أعمالي ↓" data-en="Explore My Work ↓">شاهد أعمالي ↓</a>
+          <a href="#contact" class="btn secondary" data-ar="اطلب تصميمك" data-en="Request a Design">اطلب تصميمك</a>
+        </div>
+      </div>
+      <div class="art" aria-label="Abstract colorful design">
+        <div class="shape"></div>
+        <div class="sticker one">CREATIVE ✦</div>
+        <div class="sticker two">DESIGN<br>YOUR WAY.</div>
+        <div class="sticker three">IDEAS → ART</div>
+      </div>
+    </section>
+  </div>
+
+  <section id="work">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-ar="أعمالي المختارة ✦" data-en="Selected Work ✦">أعمالي المختارة ✦</h2>
+        <p data-ar="نماذج من التصميمات الإبداعية." data-en="A selection of creative design concepts.">نماذج من التصميمات الإبداعية.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="preview p1">YOUR<br>PRODUCT.</div>
+          <div class="card-info">
+            <h3 data-ar="إعلانات المنتجات" data-en="Product Advertising">إعلانات المنتجات</h3>
+            <p data-ar="تصميم إعلاني للمنتجات" data-en="Product ad design">تصميم إعلاني للمنتجات</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview p2">SPECIAL<br>OFFER!</div>
+          <div class="card-info">
+            <h3 data-ar="عروض المحلات" data-en="Store Promotions">عروض المحلات</h3>
+            <p data-ar="تصميم عروض تجارية جذابة" data-en="Eye-catching promotional graphics">تصميم عروض تجارية جذابة</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview p3">YOUR<br>BRAND ✦</div>
+          <div class="card-info">
+            <h3 data-ar="هوية بصرية" data-en="Brand Identity">هوية بصرية</h3>
+            <p data-ar="ألوان وأسلوب يعبران عن علامتك" data-en="A visual style for your brand">ألوان وأسلوب يعبران عن علامتك</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview p4">FRESH<br>IDEAS</div>
+          <div class="card-info">
+            <h3 data-ar="تصميم السوشيال ميديا" data-en="Social Media Design">تصميم السوشيال ميديا</h3>
+            <p data-ar="بوستات لمنصات التواصل" data-en="Graphics for social platforms">بوستات لمنصات التواصل</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview p5">LESS<br>IS MORE.</div>
+          <div class="card-info">
+            <h3 data-ar="الشعارات" data-en="Logo Design">الشعارات</h3>
+            <p data-ar="أفكار بسيطة وهوية مميزة" data-en="Simple ideas, memorable identities">أفكار بسيطة وهوية مميزة</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="preview p6">STAND<br>OUT.</div>
+          <div class="card-info">
+            <h3 data-ar="أغلفة الصفحات" data-en="Social Media Covers">أغلفة الصفحات</h3>
+            <p data-ar="أغلفة مرتبة واحترافية" data-en="Clean, professional page covers">أغلفة مرتبة واحترافية</p>
+          </div>
+        </article>
+      </div>
+      <p style="font-size:13px;color:#777582;margin-top:18px"
+         data-ar="ملاحظة: هذه نماذج مؤقتة. استبدلها بصور تصميماتك الحقيقية قبل نشر الموقع."
+         data-en="Note: These are placeholders. Replace them with your actual design images before publishing.">
+        ملاحظة: هذه نماذج مؤقتة. استبدلها بصور تصميماتك الحقيقية قبل نشر الموقع.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-ar="إيه اللي أقدر أقدمه لك؟" data-en="What Can I Do For You?">إيه اللي أقدر أقدمه لك؟</h2>
+        <p data-ar="خدمات تصميم تناسب مشروعك." data-en="Design services tailored to your project.">خدمات تصميم تناسب مشروعك.</p>
+      </div>
+      <div class="services">
+        <div class="service">
+          <div class="icon">🎯</div>
+          <h3 data-ar="إعلانات المنتجات" data-en="Product Ads">إعلانات المنتجات</h3>
+          <p data-ar="تصميمات تساعد على عرض منتجاتك بصورة جذابة." data-en="Creative visuals to showcase your products.">تصميمات تساعد على عرض منتجاتك بصورة جذابة.</p>
+        </div>
+        <div class="service">
+          <div class="icon">🎨</div>
+          <h3 data-ar="الهوية البصرية" data-en="Brand Identity">الهوية البصرية</h3>
+          <p data-ar="اختيار الألوان والتفاصيل التي تميز علامتك." data-en="Colors and visual elements that define your brand.">اختيار الألوان والتفاصيل التي تميز علامتك.</p>
+        </div>
+        <div class="service">
+          <div class="icon">📱</div>
+          <h3 data-ar="تصميمات السوشيال ميديا" data-en="Social Media Graphics">تصميمات السوشيال ميديا</h3>
+          <p data-ar="بوستات وأغلفة مناسبة لحسابات مشروعك." data-en="Posts and covers for your business accounts.">بوستات وأغلفة مناسبة لحسابات مشروعك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section>
+      <div class="about">
+        <div>
+          <span class="tag" data-ar="نبذة عني" data-en="About Me">نبذة عني</span>
+          <h2 data-ar="أهلًا، أنا حسين 👋" data-en="Hi, I'm Hussein 👋">أهلًا، أنا حسين 👋</h2>
+          <p data-ar="مهتم بتصميم الجرافيك وصناعة أفكار بصرية مميزة للمشروعات. أطور مهاراتي باستمرار وأسعى لتقديم تصميمات تناسب احتياجات كل عميل."
+             data-en="I'm passionate about graphic design and creating visual ideas for businesses. I'm continuously developing my skills and working to deliver designs that fit each client's needs.">
+            مهتم بتصميم الجرافيك وصناعة أفكار بصرية مميزة للمشروعات. أطور مهاراتي باستمرار وأسعى لتقديم تصميمات تناسب احتياجات كل عميل.
+          </p>
+        </div>
+        <div>
+          <h3 data-ar="فكرتك تستحق تصميمًا مميزًا." data-en="Your idea deserves great design.">فكرتك تستحق تصميمًا مميزًا.</h3>
+          <p data-ar="هدفي إن التصميم يوصل فكرتك بوضوح ويعكس شخصية مشروعك."
+             data-en="My goal is to communicate your idea clearly and reflect your brand's personality.">
+            هدفي إن التصميم يوصل فكرتك بوضوح ويعكس شخصية مشروعك.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2 data-ar="عندك فكرة؟ خلّينا ننفذها! ✨"
+            data-en="Have an idea? Let's create it! ✨">عندك فكرة؟ خلّينا ننفذها! ✨</h2>
+        <p data-ar="ابعتلي تفاصيل مشروعك ونتكلم عن التصميم المناسب."
+           data-en="Tell me about your project and let's discuss your design.">
+          ابعتلي تفاصيل مشروعك ونتكلم عن التصميم المناسب.
+        </p>
+        <!-- استبدل الرقم برقم واتساب الخاص بك بصيغة دولية -->
+        <a id="whatsapp" class="btn primary"
+           href="https://wa.me/201000000000"
+           target="_blank" rel="noopener noreferrer"
+           data-ar="تواصل معي على واتساب" data-en="Contact Me on WhatsApp">
+          تواصل معي على واتساب
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © <span id="year"></span> Hussein Design ·
+    <span data-ar="صُنع بإبداع ❤️" data-en="Made with creativity ❤️">صُنع بإبداع ❤️</span>
+  </div>
+</footer>
+
+<script>
+const langBtn = document.getElementById("langBtn");
+let lang = "ar";
+
+langBtn.addEventListener("click", () => {
+  lang = lang === "ar" ? "en" : "ar";
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]").forEach(el => {
+    el.innerHTML = el.getAttribute(lang === "ar" ? "data-ar" : "data-en");
+  });
+
+  langBtn.textContent = lang === "ar" ? "English" : "العربية";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
